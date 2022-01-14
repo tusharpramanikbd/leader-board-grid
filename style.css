@@ -106,8 +106,9 @@ Navbar
 	width: 30px;
 }
 .nav-header{
-	display: flex;
-	justify-content: space-between;
+	display: grid;
+	grid-template-columns: auto 1fr;
+	justify-items: end;
 	align-items: center;
 	padding: 1rem 2rem;
 }
@@ -137,13 +138,18 @@ Navbar
 		display: none;
 	}
 	.nav-center{
-		display: flex;
-		justify-content: space-between;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
 	}
 	.nav-links{
-		display: flex;
+		display: grid;
+		grid-template-columns: 1fr repeat(3, auto);
 		align-items: center;
-		padding-right: 2rem;
+		justify-items: end;
+		margin-right: 2rem; 
+	}
+	.nav-links img{
+		width: 51px;
 	}
 	.nav-link{
 		color: var(--clr-white);
@@ -161,33 +167,29 @@ Leader board
 ===============
 */
 /* Top Player */
-.single-player {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	margin-top: 1rem;
-}
 .single-player img {
 	width: 56px;
 	height: 56px;
 	margin-right: 1rem;
 }
+.single-player {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	align-items: center;
+	margin-top: 1rem;
+}
 @media screen and (min-width: 768px) {
   .player-container {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-		justify-content: space-between;
-		
+		display: grid;
+		grid-template-columns: 1fr 1fr;
 	}
 	.single-player {
-		flex: 0 0 calc(50% - 2rem);
 		margin-top: 2rem;
 	}
 }
 @media screen and (min-width: 992px) {
-  .single-player {
-		flex: 0 0 calc(33.333% - 1.5rem);
+  .player-container {
+		grid-template-columns: 1fr 1fr 1fr;
 	}
 }
 /* End of Top Player */
@@ -215,13 +217,9 @@ hr {
 }
 @media screen and (min-width: 768px) {
   .blog-container {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-		align-items: center;
-	}
-	.single-blog {
-		flex: 0 0 calc(50% - 2rem);
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		column-gap: 2rem;
 	}
 	.single-blog-details h3 {
 		height: 68px;
@@ -230,13 +228,9 @@ hr {
 }
 @media screen and (min-width: 992px) {
   .single-blog {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-	}
-	.single-blog-img, 
-	.single-blog-details {
-		flex: 0 0 calc(50% - 0.5rem);
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		column-gap: 0.5rem;
 	}
 	.single-blog {
 		margin-top: 2rem;
@@ -296,21 +290,16 @@ Latest Course
 	text-transform: lowercase;
 }
 .single-course-info{
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: space-between;
+	display: grid;
+	grid-template-columns: auto 1fr auto;
+	justify-items: center;
 	font-size: 0.8rem;
 }
 @media screen and (min-width: 768px) {
   .course-container {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-		align-items: center;
-	}
-	.single-course {
-		flex: 0 0 calc(50% - 1rem);
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		column-gap: 1rem;
 	}
 	.single-course-details h3 {
 		height: 64px;
@@ -318,8 +307,10 @@ Latest Course
 	}
 }
 @media screen and (min-width: 992px) {
-  .single-course {
-		flex: 0 0 calc(33.333% - 2rem);
+  .course-container {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		column-gap: 2rem;
 	}
 }
 /*  
